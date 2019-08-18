@@ -43,11 +43,7 @@ public class Game {
                 return compareQuadruple(nums1, nums2);
 
             } else if (style1 == STRAIGHT_FLUSH || style1 == STRAIGHT) {
-                if (Integer.parseInt(nums1.get(0)) < Integer.parseInt(nums2.get(0))) {
-                    return "player2 win!";
-                } else if (Integer.parseInt(nums1.get(0)) > Integer.parseInt(nums2.get(0))) {
-                    return "player1 win!";
-                }
+               return compareStraightFlushORStraight(nums1, nums2);
 
             } else if (style1 == FLUSH) {
                 if (Integer.parseInt(types1.get(0)) < Integer.parseInt(types2.get(0))) {
@@ -59,6 +55,15 @@ public class Game {
             }
         }
 
+        return "tied!";
+    }
+
+    private String compareStraightFlushORStraight(List<String> nums1, List<String> nums2) {
+        if (Integer.parseInt(nums1.get(0)) < Integer.parseInt(nums2.get(0))) {
+            return "player2 win!";
+        } else if (Integer.parseInt(nums1.get(0)) > Integer.parseInt(nums2.get(0))) {
+            return "player1 win!";
+        }
         return "tied!";
     }
 
