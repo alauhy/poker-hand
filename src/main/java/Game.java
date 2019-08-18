@@ -6,7 +6,7 @@ public class Game {
     static int HIGH_CARD = 1;
     static int PAIR = 2;
     static int TWO_PAIR = 3;
-    static int TRIPLE = 4;
+    static int THREE_OF_A_KIND = 4;
     static int STRAIGHT = 5;
     static int FLUSH = 6;
     static int FULL_HOUSE = 7;
@@ -36,14 +36,8 @@ public class Game {
             } else if (style1 == TWO_PAIR) {
                return compareTwoPair(nums1, nums2);
 
-            } else if (style1 == TRIPLE) {
-                List<String> str1 = getDuplicateMax(nums1, TRIPLE);
-                List<String> str2 = getDuplicateMax(nums2, TRIPLE);
-                if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
-                    return "player2 win!";
-                } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
-                    return "player1 win!";
-                }
+            } else if (style1 == THREE_OF_A_KIND) {
+                return compareTriple(nums1, nums2);
 
             } else if (style1 == QUADRUPLE) {
                 List<String> str1 = getDuplicateMax(nums1, QUADRUPLE);
@@ -71,6 +65,17 @@ public class Game {
             }
         }
 
+        return "tied!";
+    }
+
+    private String compareTriple(List<String> nums1, List<String> nums2) {
+        List<String> str1 = getDuplicateMax(nums1, THREE_OF_A_KIND);
+        List<String> str2 = getDuplicateMax(nums2, THREE_OF_A_KIND);
+        if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
+            return "player2 win!";
+        } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
+            return "player1 win!";
+        }
         return "tied!";
     }
 
@@ -150,7 +155,7 @@ public class Game {
             map.entrySet().stream().map(e -> e.getValue() == 2 ? str.add(e.getKey()) : "").collect(Collectors.toList());
             return str;
 
-        } else if (style == TRIPLE) {
+        } else if (style == THREE_OF_A_KIND) {
             for (int i = 0; i < nums.size(); i++) {
                 if (map.get(nums.get(i)) == 3) {
                     return Arrays.asList(nums.get(i));
@@ -186,7 +191,7 @@ public class Game {
             }
         } else if (cnt == 2) {
             if (nums.get(1).equals(nums.get(3)) || nums.get(0).equals(nums.get(2)) || nums.get(2).equals(nums.get(4)))
-                return TRIPLE;
+                return THREE_OF_A_KIND;
             else {
                 return TWO_PAIR;
             }
