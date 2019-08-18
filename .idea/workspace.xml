@@ -33,8 +33,8 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state relative-caret-position="114">
+              <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,6 +43,16 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>&quot;player2 win!&quot;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>PLAYER1_WIN</replace>
+      <replace>TIED</replace>
+      <replace>PLAYER2_WIN</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -671,14 +681,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566107475487</updated>
-      <workItem from="1566107478886" duration="13850000" />
+      <workItem from="1566107478886" duration="14116000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pokerCardTest_should_return_player2_win_when_compare_given_player1_5C5D7C7D9C_and_player2_5H5S7S7HKS - 2019.08.18 at 17h 12m 56s.xml">
-      <configuration name="pokerCardTest.should_return_player2_win_when_compare_given_player1_5C5D7C7D9C_and_player2_5H5S7S7HKS" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="pokerCardTest - 2019.08.18 at 17h 20m 55s.xml">
       <configuration name="pokerCardTest" configurationId="JUnit" />
     </history-entry>
@@ -706,9 +713,12 @@
     <history-entry file="pokerCardTest - 2019.08.18 at 18h 51m 44s.xml">
       <configuration name="pokerCardTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="pokerCardTest - 2019.08.18 at 19h 01m 55s.xml">
+      <configuration name="pokerCardTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13850000" />
+    <option name="totallyTimeSpent" value="14116000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -723,9 +733,9 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32923076" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
@@ -774,8 +784,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="62" column="21" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+        <state relative-caret-position="114">
+          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

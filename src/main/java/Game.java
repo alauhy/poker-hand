@@ -3,6 +3,9 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Game {
+    public static final String PLAYER1_WIN = "player1 win!";
+    public static final String PLAYER2_WIN = "player2 win!";
+    public static final String TIED = "tied!";
     static int HIGH_CARD = 1;
     static int PAIR = 2;
     static int TWO_PAIR = 3;
@@ -25,9 +28,9 @@ public class Game {
 
 
         if (style1 > style2) {
-            return "player1 win!";
+            return PLAYER1_WIN;
         } else if (style1 < style2) {
-            return "player2 win!";
+            return PLAYER2_WIN;
         } else {
             if (style1 == HIGH_CARD) {
                 return compareHighCard(nums1, nums2);
@@ -51,23 +54,23 @@ public class Game {
             }
         }
 
-        return "tied!";
+        return TIED;
     }
 
     private String compareFlush(List<String> types2, List<String> types1) {
         if (Integer.parseInt(types1.get(0)) < Integer.parseInt(types2.get(0))) {
-            return "player2 win!";
+            return PLAYER2_WIN;
         } else if (Integer.parseInt(types1.get(0)) > Integer.parseInt(types2.get(0))) {
-            return "player1 win!";
+            return PLAYER1_WIN;
         }
         return "tied!";
     }
 
     private String compareStraightFlushORStraight(List<String> nums1, List<String> nums2) {
         if (Integer.parseInt(nums1.get(0)) < Integer.parseInt(nums2.get(0))) {
-            return "player2 win!";
+            return PLAYER2_WIN;
         } else if (Integer.parseInt(nums1.get(0)) > Integer.parseInt(nums2.get(0))) {
-            return "player1 win!";
+            return PLAYER1_WIN;
         }
         return "tied!";
     }
@@ -76,9 +79,9 @@ public class Game {
         List<String> str1 = getDuplicateMax(nums1, FOUR_OF_A_KIND);
         List<String> str2 = getDuplicateMax(nums2, FOUR_OF_A_KIND);
         if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
-            return "player2 win!";
+            return PLAYER2_WIN;
         } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
-            return "player1 win!";
+            return PLAYER1_WIN;
         }
         return "tied!";
     }
@@ -87,9 +90,9 @@ public class Game {
         List<String> str1 = getDuplicateMax(nums1, THREE_OF_A_KIND);
         List<String> str2 = getDuplicateMax(nums2, THREE_OF_A_KIND);
         if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
-            return "player2 win!";
+            return PLAYER2_WIN;
         } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
-            return "player1 win!";
+            return PLAYER1_WIN;
         }
         return "tied!";
     }
@@ -101,17 +104,17 @@ public class Game {
         for (int i = 0; i < 2; i++) {
 
             if (Integer.parseInt(str1.get(i)) < Integer.parseInt(str2.get(i))) {
-                return "player2 win!";
+                return PLAYER2_WIN;
             } else if (Integer.parseInt(str1.get(i)) > Integer.parseInt(str2.get(i))) {
-                return "player1 win!";
+                return PLAYER1_WIN;
             } else {
                 List<String> rest1 = nums1.stream().filter(e -> !e.equals(str1.get(0))).filter(e -> !e.equals(str1.get(1))).collect(Collectors.toList());
                 List<String> rest2 = nums2.stream().filter(e -> !e.equals(str2.get(0))).filter(e -> !e.equals(str2.get(1))).collect(Collectors.toList());
                 if (Integer.parseInt(rest1.get(0)) < Integer.parseInt(rest2.get(0))) {
 
-                    return "player2 win!";
+                    return PLAYER2_WIN;
                 } else if (Integer.parseInt(rest1.get(0)) > Integer.parseInt(rest2.get(0))) {
-                    return "player1 win!";
+                    return PLAYER1_WIN;
                 }
             }
 
@@ -124,34 +127,34 @@ public class Game {
         List<String> str2 = getDuplicateMax(nums2, PAIR);
 
         if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
-            return "player2 win!";
+            return PLAYER2_WIN;
         } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
-            return "player1 win!";
+            return PLAYER1_WIN;
         } else {
             List<String> rest1 = nums1.stream().filter(e -> !e.equals(str1.get(0))).collect(Collectors.toList());
             List<String> rest2 = nums2.stream().filter(e -> !e.equals(str2.get(0))).collect(Collectors.toList());
             for (int i = 0; i < 3; i++) {
                 if (Integer.parseInt(rest1.get(i)) < Integer.parseInt(rest2.get(i))) {
 
-                    return "player2 win!";
+                    return PLAYER2_WIN;
                 } else if (Integer.parseInt(rest1.get(i)) > Integer.parseInt(rest2.get(i))) {
-                    return "player1 win!";
+                    return PLAYER1_WIN;
                 }
             }
 
         }
-        return "tied!";
+        return TIED;
     }
 
     private String compareHighCard(List<String> nums1, List<String> nums2) {
         for (int i = 0; i < nums1.size(); i++) {
             if (nums1.get(i).compareTo(nums2.get(i)) == -1) {
-                return "player2 win!";
+                return PLAYER2_WIN;
             } else if (nums1.get(i).compareTo(nums2.get(i)) == 1) {
-                return "player1 win!";
+                return PLAYER1_WIN;
             }
         }
-        return "tied!";
+        return TIED;
     }
 
     private List<String> getDuplicateMax(List<String> nums, int style) {
