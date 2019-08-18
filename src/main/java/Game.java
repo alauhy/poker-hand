@@ -63,7 +63,7 @@ public class Game {
         } else if (Integer.parseInt(types1.get(0)) > Integer.parseInt(types2.get(0))) {
             return PLAYER1_WIN;
         }
-        return "tied!";
+        return TIED;
     }
 
     private String compareStraightFlushORStraight(List<String> nums1, List<String> nums2) {
@@ -72,7 +72,7 @@ public class Game {
         } else if (Integer.parseInt(nums1.get(0)) > Integer.parseInt(nums2.get(0))) {
             return PLAYER1_WIN;
         }
-        return "tied!";
+        return TIED;
     }
 
     private String compareQuadruple(List<String> nums1, List<String> nums2) {
@@ -83,7 +83,7 @@ public class Game {
         } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
             return PLAYER1_WIN;
         }
-        return "tied!";
+        return TIED;
     }
 
     private String compareTriple(List<String> nums1, List<String> nums2) {
@@ -94,7 +94,7 @@ public class Game {
         } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
             return PLAYER1_WIN;
         }
-        return "tied!";
+        return TIED;
     }
 
     private String compareTwoPair(List<String> nums1, List<String> nums2) {
@@ -119,7 +119,7 @@ public class Game {
             }
 
         }
-        return "tied!";
+        return TIED;
     }
 
     private String comparePair(List<String> nums1, List<String> nums2) {
