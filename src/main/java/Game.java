@@ -10,7 +10,7 @@ public class Game {
     static int STRAIGHT = 5;
     static int FLUSH = 6;
     static int FULL_HOUSE = 7;
-    static int QUADRUPLE = 8;
+    static int FOUR_OF_A_KIND = 8;
     static int STRAIGHT_FLUSH = 9;
 
 
@@ -39,14 +39,8 @@ public class Game {
             } else if (style1 == THREE_OF_A_KIND) {
                 return compareTriple(nums1, nums2);
 
-            } else if (style1 == QUADRUPLE) {
-                List<String> str1 = getDuplicateMax(nums1, QUADRUPLE);
-                List<String> str2 = getDuplicateMax(nums2, QUADRUPLE);
-                if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
-                    return "player2 win!";
-                } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
-                    return "player1 win!";
-                }
+            } else if (style1 == FOUR_OF_A_KIND) {
+                return compareQuadruple(nums1, nums2);
 
             } else if (style1 == STRAIGHT_FLUSH || style1 == STRAIGHT) {
                 if (Integer.parseInt(nums1.get(0)) < Integer.parseInt(nums2.get(0))) {
@@ -65,6 +59,17 @@ public class Game {
             }
         }
 
+        return "tied!";
+    }
+
+    private String compareQuadruple(List<String> nums1, List<String> nums2) {
+        List<String> str1 = getDuplicateMax(nums1, FOUR_OF_A_KIND);
+        List<String> str2 = getDuplicateMax(nums2, FOUR_OF_A_KIND);
+        if (Integer.parseInt(str1.get(0)) < Integer.parseInt(str2.get(0))) {
+            return "player2 win!";
+        } else if (Integer.parseInt(str1.get(0)) > Integer.parseInt(str2.get(0))) {
+            return "player1 win!";
+        }
         return "tied!";
     }
 
@@ -162,7 +167,7 @@ public class Game {
                 }
             }
 
-        } else if (style == QUADRUPLE) {
+        } else if (style == FOUR_OF_A_KIND) {
             for (int i = 0; i < nums.size(); i++) {
                 if (map.get(nums.get(i)) == 4) {
                     return Arrays.asList(nums.get(i));
@@ -185,7 +190,7 @@ public class Game {
 
         if (cnt == 3) {
             if (nums.get(1).equals(nums.get(3))) {
-                return QUADRUPLE;
+                return FOUR_OF_A_KIND;
             } else {
                 return FULL_HOUSE;
             }
