@@ -46,15 +46,20 @@ public class Game {
                return compareStraightFlushORStraight(nums1, nums2);
 
             } else if (style1 == FLUSH) {
-                if (Integer.parseInt(types1.get(0)) < Integer.parseInt(types2.get(0))) {
-                    return "player2 win!";
-                } else if (Integer.parseInt(types1.get(0)) > Integer.parseInt(types2.get(0))) {
-                    return "player1 win!";
-                }
+                return compareFlush(types2, types1);
 
             }
         }
 
+        return "tied!";
+    }
+
+    private String compareFlush(List<String> types2, List<String> types1) {
+        if (Integer.parseInt(types1.get(0)) < Integer.parseInt(types2.get(0))) {
+            return "player2 win!";
+        } else if (Integer.parseInt(types1.get(0)) > Integer.parseInt(types2.get(0))) {
+            return "player1 win!";
+        }
         return "tied!";
     }
 
